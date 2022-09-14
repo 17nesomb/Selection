@@ -20,27 +20,28 @@ namespace ConsoleApp1
             {
                 case "cheese and tomato":
                 case "margherita":
-                    Console.WriteLine("Suitable for Vegetarians");
+                    Print("Suitable for Vegetarians",ConsoleColor.Green);
                     break;
 
                 case "pepperoni":
                 case "meat feast":
-                    Console.WriteLine("Contains meat");
+                    Print("Contains meat",ConsoleColor.Red);
                     break;
 
                 default:
-                    Console.WriteLine("Unknown, May contain meat");
+                    Print("Unknown, May contain meat",ConsoleColor.Red);
                     break;
             }
 
             string musicGenre = Input("What genre of music is your favourite? ");
+            musicGenre.ToLower();
 
             switch(musicGenre)
             {
                 case "rock":
                 case "indie":
 
-                    Console.WriteLine("Youre cool, i like you");
+                    Print("Youre cool, i like you",ConsoleColor.Green);
                     break;
 
                 case "grime":
@@ -58,13 +59,21 @@ namespace ConsoleApp1
                     Console.WriteLine("I mean fair enough i guess");
                     break;
                 default:
-                    Console.WriteLine("WHAT");
+                    Print("WHAT",ConsoleColor.DarkRed);
                     break;
             }
            
 
             
              
+        }
+
+        private static void Print(string output, ConsoleColor textColour)
+        {
+            
+            Console.ForegroundColor = textColour;
+            Console.WriteLine(output);
+            Console.ResetColor();
         }
 
         /// <summary>
