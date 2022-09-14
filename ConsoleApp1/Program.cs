@@ -10,9 +10,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.Write("What is your favourite pizza? ");
-            string pizzaFlavour = Console.ReadLine();
+
+            string pizzaFlavour = Input("What pizza would you like? ");
             pizzaFlavour = pizzaFlavour.ToLower();
+
+
 
             switch(pizzaFlavour)
             {
@@ -30,23 +32,50 @@ namespace ConsoleApp1
                     Console.WriteLine("Unknown, May contain meat");
                     break;
             }
-            /*
-            if (pizzaFlavour == "cheese and tomato" || pizzaFlavour == "margherita")
-            {
-                Console.WriteLine("Suitable for vegetarians");
-            }
 
-            else if(pizzaFlavour == "pepperoni" || pizzaFlavour == "meat feast")
-            {
-                Console.WriteLine("Contains Meat");
-            }
+            string musicGenre = Input("What genre of music is your favourite? ");
 
-            else
+            switch(musicGenre)
             {
-                Console.WriteLine("Unknown pizza, may contain meat");
+                case "rock":
+                case "indie":
+
+                    Console.WriteLine("Youre cool, i like you");
+                    break;
+
+                case "grime":
+                case "metal":
+                case "country":
+
+                    Console.WriteLine("._.");
+                    break;
+
+                case "jazz":
+                case "blues":
+                case "rap":
+                case "pop":
+
+                    Console.WriteLine("I mean fair enough i guess");
+                    break;
+                default:
+                    Console.WriteLine("WHAT");
+                    break;
             }
-             */
+           
+
+            
              
+        }
+
+        /// <summary>
+        /// Ask a question
+        /// </summary>
+        /// <param name="question">The question to ask </param>
+        /// <returns>The answer to the question </returns>
+        private static string Input(string question)
+        {
+            Console.Write(question);
+            return Console.ReadLine();
         }
     }
 }
