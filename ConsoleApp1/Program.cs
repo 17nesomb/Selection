@@ -14,6 +14,23 @@ namespace ConsoleApp1
             string pizzaFlavour = Console.ReadLine();
             pizzaFlavour = pizzaFlavour.ToLower();
 
+            switch(pizzaFlavour)
+            {
+                case "cheese and tomato":
+                case "margherita":
+                    Console.WriteLine("Suitable for Vegetarians");
+                    break;
+
+                case "pepperoni":
+                case "meat feast":
+                    Console.WriteLine("Contains meat");
+                    break;
+
+                default:
+                    Console.WriteLine("Unknown, May contain meat");
+                    break;
+            }
+            /*
             if (pizzaFlavour == "cheese and tomato" || pizzaFlavour == "margherita")
             {
                 Console.WriteLine("Suitable for vegetarians");
@@ -28,7 +45,8 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Unknown pizza, may contain meat");
             }
-                
+             */
+             
         }
     }
 }
